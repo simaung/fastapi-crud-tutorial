@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
+from app.api import home
+
 app = FastAPI()
 
-
-@app.get("/")
-def home():
-    return {"Hello":"World"}
+app.include_router(home.router)
